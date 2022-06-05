@@ -14,7 +14,7 @@ public class AnalysisResult {
             srcFileList.set(i, line);
         }
         saveRltFile(srcFileList, rltFile); // 将最终结果保存到目标文件中
-//写入完成后，读取目标文件中的内容
+        //写入完成后，读取目标文件中的内容
         List<String> rltFileList = readSrcFile(rltFile);
         System.out.println("源文件内容为：" + Util.listToString(srcFileList));
         System.out.println("目标文件内容为：" + Util.listToString(rltFileList));
@@ -24,6 +24,7 @@ public class AnalysisResult {
         List<String> list = new ArrayList<>();
         BufferedReader reader = null;
         try {
+            //在此完成方法的定义，从srcFile路径的文件中读取内容，并以行为单位存储到list集合中
             String str;
             reader = new BufferedReader(new FileReader(srcFile));
             while ((str = reader.readLine()) != null) {
@@ -43,10 +44,11 @@ public class AnalysisResult {
         return list;
     }
 
+    //将List内容存储到目标文件中
     private void saveRltFile(List<String> list, String rltFile) {
         BufferedWriter writer = null;
         try {
-// 在此完成方法的定义，将list集合中的字符串写入到目标文件中，每个字符串占
+            // 在此完成方法的定义，将list集合中的字符串写入到目标文件中，每个字符串占一行
             writer = new BufferedWriter(new FileWriter(rltFile));
             for (String str : list) {
                 writer.write(str);
