@@ -14,7 +14,7 @@ public class Main {
             return value * 100;
         }
     }
-
+//666
     public static void main(String[] args) {
         System.out.println(new Main().value);
         System.out.println(new InnerClass().value);
