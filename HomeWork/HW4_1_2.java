@@ -10,5 +10,4 @@ public class HW4_1_2 {
         System.out.println(str1.replace("ÖÐ¹ú", "China"));
         System.out.println("Java".equalsIgnoreCase("JAVA"));
     }
-
 }

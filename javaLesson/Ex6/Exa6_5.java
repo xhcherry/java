@@ -27,6 +27,7 @@ public class Exa6_5 {
         computer = new A();
         double result = computer.average(a, b);
         System.out.printf("%5.2f和%5.2f的算术平均值：%5.2f\n", a, b, result);
+        computer = new B();
         result = computer.average(a, b);
         System.out.printf("%5.2f和%5.2f的几何平均值：%5.2f\n", a, b, result);
     }

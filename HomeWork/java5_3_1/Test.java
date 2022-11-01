@@ -12,17 +12,17 @@ public class Test {
         try {
             scan = new Scanner(file);
             scan.useDelimiter("[^0123456789.]+");
-            BufferedWriter bs = new BufferedWriter(new FileWriter("HomeWork\\java5_3_1\\output.txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("HomeWork\\java5_3_1\\output.txt"));
             while (scan.hasNext()) {
                 try {
                     int price = scan.nextInt();
                     count++;
                     sum = sum + price;
-                } catch (InputMismatchException exp) {
+                } catch (Exception e) {
                 }
             }
-            bs.write("所有商品的平均价格为" + sum / count + "元");
-            bs.close();
+            bw.write("所有商品的平均价格为" + sum / count + "元");
+            bw.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

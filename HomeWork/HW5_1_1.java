@@ -20,9 +20,7 @@ public class HW5_1_1 {
             System.out.println(m);
             s = new String(tom, 0, 3);
             System.out.println(s);
-
         } catch (IOException e) {
         }
     }
-
 }

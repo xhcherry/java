@@ -4,7 +4,7 @@ interface Protected {
     void protect();
 }
 
-class Animal implements Protected {
+abstract class Animal implements Protected {
     String name;
 
     public Animal(String name) {
@@ -18,8 +18,7 @@ class Animal implements Protected {
     public void getName() {
     }
 
-    public void protect() {
-    }
+    public abstract void protect();
 }
 
 class Tiger extends Animal {

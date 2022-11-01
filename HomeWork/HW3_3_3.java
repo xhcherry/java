@@ -21,7 +21,6 @@ class Sanj {
             throw new NotsanjiaoException();
         }
     }
-
     public double getArea() {
         double p;
         p = (x + y + z) / 2.0;
