@@ -1,18 +1,11 @@
-import java.util.regex.Pattern;
-
+import java.sql.*;
 public class Test1 {
-    public static void main(String[] args) {
-        String[] regexStrs = {"^1[3-9]\\d{9}$", "a*b"};
-        System.out.println(regexStrs.length);
-        String[] checkStrings = {"27755610881", "aaaab"};
-        System.out.println(checkStrings.length);
-        if (checkStrings.length == regexStrs.length) {
-            for (int i = 0; i < checkStrings.length; i++)
-                System.out.println(Pattern.matches(regexStrs[i], checkStrings[i]));
-        }
-        Pattern p = Pattern.compile("/+");
-        String[] results = p.split("张三/李四//王五///赵六/钱七");
-        for (String s : results)
-            System.out.print(s + "\t");
+    public static void main(String[] args) throws Exception {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String url = "jdbc:mysql://localhost/mysql?user=root&password=123456";
+        Connection conn = DriverManager.getConnection(url);
+        DatabaseMetaData dbmd = conn.getMetaData();
+        System.out.print("JDBC驱动程序："+dbmd.getDriverName()+","+dbmd.getDriverVersion()+"\nJDBC URL:"+dbmd.getURL()+"\n数据库:"+dbmd.getDatabaseProductName()+",版本:"+dbmd.getDatabaseProductVersion()+"，用户名:"+dbmd.getUserName());
+        conn.close();
     }
 }
