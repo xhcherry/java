@@ -1,5 +1,4 @@
 import java.sql.*;
-
 public class Test1 {
     public static void main(String[] args) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
