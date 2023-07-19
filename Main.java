@@ -1,24 +1,17 @@
+
 public class Main {
-    public int value = 10;
-
-    public int getValue() {
-        int value = 300;
-        System.out.println(value);
-        return this.value + new InnerClass().getValue() + value;
-    }
-
-    public static class InnerClass {
-        public int value = 20;
-
-        public int getValue() {
-            return value * 100;
+    public static void main(String[] args) {
+        int[]x={0,1,2,3};
+        for(int i=0;i<3;i+=2){
+            try{
+                System.out.println(x[i+2]/x[i]+x[i+1]);
+            }catch(ArithmeticException e){
+                System.out.println("error1");
+            }catch (Exception e){
+                System.out.println("error2");
+            }
         }
     }
-//a
-    public static void main(String[] args) {
-        System.out.println(new Main().value);
-        System.out.println(new InnerClass().value);
-        System.out.println(new InnerClass().getValue());
-        System.out.println(new Main().getValue());
-    }
 }
+
+
